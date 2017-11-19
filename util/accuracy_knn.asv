@@ -1,0 +1,25 @@
+function accuracy = accuracy_knn(knn_model, x_test, y_test)
+    y_hat = predict(knn_model, x_test)
+    
+    correct = 0;
+    
+    len_y_hat = size(y_hat, 1);
+    len_y_test = size(y_test, 1);
+    
+    %       -check that the variables x and y have the same lengths
+    if (len_y_hat ~= len_y_test)
+        msgID='accuracy_knn:mismatchedSize';
+        msg = 'predicted value(y_) and response(y) have mismatching size.';
+        causeException = MException(msgID, msg);
+        
+        throw(causeException);
+    end    
+    
+    for i=1:size(y_hat,1)
+        if y_hat(i) == y_test(i)
+            correct = correct + 1;
+        end 
+    end 
+    
+    accuracy =     
+end 
