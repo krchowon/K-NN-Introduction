@@ -33,10 +33,13 @@ In any data science exercise, inspecting the data first is critical in  finding 
   
   What I found particularly interesting when leveraging my years of fruit expertise is across the height = weight, we see very round fruits, but particularly the light blue cluster is particularly much smaller overall than the cluster of purple and green cluster in the centre. Even more interesting is a cluster of yellow fruits seem to be noticeably more oval in shape than the rest of the fruits. These 2 clusters gives me confidence that classifying points by width and height in those 2 local domains will yield accurate predictions. However I anticipate KMeans to struggle moreso slicing the cloud purple & green fruits in the centre.
   
+  # Applying the Algorithm
   As We fit the Knn model with a parameter K=5, we see the following results
   
   <IMG src="https://github.com/krchowon/K-NN-Introduction/blob/master/out/predict_example.PNG">  
   
+  
+  # Sensitivity Analysis
   The accuracy of the algorithm seems healthy but we can see how sensitive these results are to the choice of K
 
   <IMG src="https://github.com/krchowon/K-NN-Introduction/blob/master/out/KSensitivity.bmp">
