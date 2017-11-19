@@ -4,7 +4,7 @@ In this repo, I will demonstrate a simple Classification Problem of fruits acros
 
 To begin, run through <A href='https://github.com/krchowon/K-NN-Introduction/blob/master/FruitClassifier.m'>FruitClassifier</A> script for a useful guide on the process.
 
-The data we are experientating with is avilable via <A href='https://github.com/krchowon/K-NN-Introduction/blob/master/data/fruit_data_with_colors.txt'>fruit data text file</A>. Fruits Data contains mass, height, and width of a selection of oranges, lemons and apples.  The heights were measured along the core of the fruit. The widths were the widest width perpendicular to the height.
+The data we are experientating with is available via <A href='https://github.com/krchowon/K-NN-Introduction/blob/master/data/fruit_data_with_colors.txt'>fruit data text file</A>. Fruits Data contains mass, height, and width of a selection of oranges, lemons and apples.  The heights were measured along the core of the fruit. The widths were the widest width perpendicular to the height.
 
 | fruit_label | fruit_name | fruit_subtype | mass | width | height | color_score |
 | ------------| :--------: | :-----------: | :--: | :---: | :----: | ----------: |
@@ -21,17 +21,17 @@ The data we are experientating with is avilable via <A href='https://github.com/
 The above data exists in txt file so the first step would be to retrieve, scrape and clean the data. This will prepare it for our analysis.
 
 # Review/Explore Data sets. 
-In any data science exercise, inspecting the data first is critical in  finding strong relationships in data and/or finding anomalies in the data set.
+In any data science exercise, inspecting the data first is critical in finding strong relationships in data and/or finding anomalies in the data set.
 
 <IMG src="https://github.com/krchowon/K-NN-Introduction/blob/master/out/scatter.bmp">
   
-  At first glimpse, all these dimensions are quite overwhelming. Good sanity check is to scan for potential outliers in the matrix. Perhaps investigate if there may be any discernable  clusters or groups that can emerge from the features. One in particular I thought was noticeable is this small cluster on the bottom left region of Height vs. Width or Height vs. Mass.
+  At first glimpse, all these dimensions are quite overwhelming. A Good sanity check is to scan for potential outliers in the matrix. Perhaps investigate if there may be any discernable clusters or groups that can emerge from the features. One in particular I thought was noticeable is this small cluster on the bottom left region of Height vs. Width or Height vs. Mass.
   
-  So I decided to dig a lil further.  
+  So I decided to dig a little deeper.  
   
 <IMG src="https://github.com/krchowon/K-NN-Introduction/blob/master/out/WidthVsHeight.bmp">  
   
-  What I found particularly interesting when leveraging my years of fruit expertise is across the height = weight, we see very round fruits, but particularly the light blue cluster is particularly much smaller overall than the cluster of purple and green cluster in the centre. Even more interesting is a cluster of yellow fruits seem to be noticeably more oval in shape than the rest of the fruits. These 2 clusters gives me confidence that classifying points by width and height in those 2 local domains will yield accurate predictions. However I anticipate KMeans to struggle moreso slicing the cloud purple & green fruits in the centre.
+  What I found particularly interesting when leveraging my years of fruit domain knowledge expertise is across the height = weight, we see very round fruits, but particularly the light blue cluster is much smaller overall than the cluster of purple and green fruits in the centre. Even more interesting is a cluster of yellow fruits that measure more oval in shape than the rest of the fruits. These 2 clusters gives me confidence that classifying points by width and height in those 2 local domains will yield accurate predictions. However I anticipate KMeans to struggle moreso slicing the cloud of purple & green fruits in the centre.
   
   # Applying the Algorithm
   As We fit the Knn model with a parameter K=5, we see the following results
@@ -40,7 +40,7 @@ In any data science exercise, inspecting the data first is critical in  finding 
   
   
   # Sensitivity Analysis
-  The accuracy of the algorithm seems healthy but we can see how sensitive these results are to the choice of K
+  The accuracy of the algorithm seems healthy but we would like to see how sensitive these results are to the choice of K
 
   <IMG src="https://github.com/krchowon/K-NN-Introduction/blob/master/out/KSensitivity.bmp">
     K Nearest Neighbours appears very sensitive to choice of K. Shape of accuracy across choice of N has large variance in accuracy. However, the algorithm seems optimal around 5-7 nearest neighbours.
